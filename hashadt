@@ -1,0 +1,89 @@
+setA = {"A", "B", "C", "D", "E"}
+setB = {"B", "C", "D"}
+
+
+def display():
+    print(setA)
+    print(setB)
+
+def addEle(ele):
+    setA.add(ele)
+
+def remEle(ele):
+    setA.remove(ele)
+    print("Element" + ele + "removed")
+
+def searchEle(ele):
+    if ele in setA:
+        return "True"
+
+def getSize():
+    print(len(setA))
+
+def getInter():
+    setC = setA.intersection(setB)
+    print(setC)
+
+def getUnion():
+    setC = setA.union(setB)
+    print(setC)
+
+def getDiff():
+    setC = setA.difference(setB)
+    print(setC)
+
+def getSubset():
+    setC = setB.issubset(setA)
+    print(setC)
+
+if _name_ == "_main_":
+    while True:
+        print("1. Add Element.")
+        print("2. Remove Element.")
+        print("3. Search Element.")
+        print("4. Get Size of Set.")
+        print("5. Intersection.")
+        print("6. Union.")
+        print("7. Difference.")
+        print("8. Subset.")
+        print("9. Exit.")
+        ch = int(input("->"))
+
+        while (ch != 9):
+            if ch == 1:
+                display()
+                print("Enter the element you want to add")
+                ele = input()
+                addEle(ele)
+                display()
+                break
+            elif ch == 2:
+                display()
+                print("Enter the element you want to remove")
+                ele = input()
+                remEle(ele)
+                display()
+                break
+            elif ch == 3:
+                print("Enter the element you want to search")
+                ele = input()
+                searchEle(ele)
+                display()
+                break
+            elif ch == 4:
+                getSize()
+                break
+            elif ch == 5:
+                getInter()
+                break
+            elif ch == 6:
+                getUnion()
+                break
+            elif ch == 7:
+                getDiff()
+                break
+            elif ch == 8:
+                getSubset()
+                break
+        if ch == 9:
+            break
